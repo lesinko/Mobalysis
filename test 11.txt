@@ -1,0 +1,17 @@
+#update packages
+sudo apt update
+
+#upgrade the package
+sudo apt upgrade
+
+#install Nginx
+sudo apt install Nginx -y
+
+#install Node.js
+sudo apt install nodejs -y
+
+#Node.js version
+node -v
+
+#install npm
+sudo apt install npm
