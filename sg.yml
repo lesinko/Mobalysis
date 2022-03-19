@@ -1,0 +1,20 @@
+---
+ - name: Test
+   hosts: localhost
+   connection: local
+   tasks:
+    - name: create a security group
+      amazon.aws.ec2_group:
+       name: demoSG
+       description: demo security group test
+       vpc_id: vpc-0198c952ea1569a2d
+       region: us-east-1
+       rules:
+        - proto: tcp
+          ports:
+          - 80
+          - 443
+          cidr_ip: 0.0.0.0/0
+       rules_egress:
+         - protocol: all
+           cidr_ip: 0.0.0.0/0
